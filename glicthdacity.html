@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <style>
+            body { background-image:url(http://orig14.deviantart.net/3a9b/f/2015/090/f/9/static_by_ahometoons-d8nwk5f.gif); background-repeat: no-repeat; 
+        background-size: cover; align-items: center}
+        </style>
+        <title>Glitchdacity</title>
+        <script type="text/javascript">
+        var currentImageIndex = -1,
+        maxImageIndex = 0,
+        images = [],
+        changeInterval = 250;
+
+        // prepares relevant variables to cycle throguh images
+        var setUp = function() {
+        images = document.images;
+        maxImageIndex = images.length;
+        currentImageIndex = 0;
+        };
+
+        // changes the banner currently being displayed
+        var changeBanner = function() {
+            var i;
+
+            // either re-set the index to 0 if the max length was reached or increase the index by 1
+            currentImageIndex = (currentImageIndex >= maxImageIndex - 1) ? 0 : currentImageIndex += 1;
+
+            for (i = 0; i < maxImageIndex; i ++) {
+                images[i].hidden = (i !== currentImageIndex);
+            }
+        };
+
+        // a function which is triggered following the `load` event
+        window.onload = function() {
+            setUp();
+
+            images[currentImageIndex].hidden = false; // show the first banner image;
+
+            setInterval(changeBanner, changeInterval); // following a delay, keep changing the banner image by the specified interval
+        };
+        
+        </script>
+    </head>
+    <body>
+    <center>
+    <div id="wrapper">
+        <div>
+            <img src="logo.bmp" width="1000px" height="1000px" hidden />
+            <img src="echo.bmp" width="1000px" height="1000px" hidden />
+            <img src="echo_2.bmp" width="1000px" height="1000px" hidden />
+            <img src="mix1.bmp" width="1000px" height="1000px" hidden />
+            <img src="level.bmp" width="1000px" height="1000px" hidden />
+            <img src="mix2.bmp" width="1000px" height="1000px" hidden />
+            <img src="mix3.bmp" width="1000px" height="1000px" hidden />
+            <img src="final.bmp" width="1000px" height="1000px" hidden />
+            <img src="pual.bmp" width="1000px" height="1000px" hidden />
+            <img src="bass.bmp" width="1000px" height="1000px" hidden />
+            <img src="wahwah.bmp" width="1000px" height="1000px" hidden />
+        </div>
+    </div>   
+        
+        <p style="color:white; text-shadow: 4px 4px 8px #000000;">
+        For this project I used Audacity to databend the Audacity Logo into multiple different pictures using different Audacity effects<br></br>
+        I started by first converting the Audacity Logo from a .bmp file to raw data in Audacity.<br></br>
+        I then highlighted a section of the resulting sound file and added various effects to it, such as echo or bass.<br></br>
+        I would save the result each time to a .bmp resulting in the glitched image.<br></br>
+        I repeated this process multiple times, adding more effects.
+        -James Cole
+    </p>
+    </center>    
+    </body>
+</html>
